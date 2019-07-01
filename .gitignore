@@ -1,0 +1,13 @@
+BuildUboot/
+tags
+*tags
+*.o
+GoldenTop/Work
+GoldenTop/Sources/.qsys*
+GoldenTop/Sources/standalone_hps/
+!GoldenTop/Work/soc_system.cdf
+
+GoldenTop/Simulation/*.ghw
+GoldenTop/Simulation/golden_top
+
+*.bak

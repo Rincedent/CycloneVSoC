@@ -1,11 +1,12 @@
-bsp-create-settings --type spl --bsp-dir GoldenTop/BuildUboot \
+mkdir -p BuildUboot
+bsp-create-settings --type spl --bsp-dir BuildUboot \
   --preloader-settings-dir GoldenTop/Work/hps_isw_handoff/standalone_hps_hps_0 \
-  --settings GoldenTop/BuildUboot/settings.bsp --set spl.boot.WATCHDOG_ENABLE false
+  --settings BuildUboot/settings.bsp --set spl.boot.WATCHDOG_ENABLE false
 
-make -C GoldenTop/BuildUboot -j8
-make -C GoldenTop/BuildUboot uboot -j8
+make -C BuildUboot -j8
+make -C BuildUboot uboot -j8
 
-cat GoldenTop/BuildUboot/preloader-mkpimage.bin GoldenTop/BuildUboot/uboot-socfpga/u-boot.img > outputs/boot-partition.img
+cat BuildUboot/preloader-mkpimage.bin BuildUboot/uboot-socfpga/u-boot.img > outputs/boot-partition.img
 
 quartus_cpf -c GoldenTop/Work/output_files/soc_system.sof outputs/soc_system.rbf
 
