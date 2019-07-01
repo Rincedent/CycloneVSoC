@@ -1,0 +1,24 @@
+v 4
+file . "../Sources/standalone_hps/synthesis/standalone_hps.vhd" "7f09aee4bc652198b4e4dbb81b2ce484c5372766" "20190614145331.359":
+  entity standalone_hps at 5( 65) + 0 on 20;
+  architecture rtl of standalone_hps at 130( 14029) + 0 on 21;
+file . "../Sources/axi4_pkg.vhd" "2cff6fa2ae7b741f657b9455d48affbc6acea270" "20190614145331.191":
+  package axi4_pkg at 30( 1268) + 0 on 16 body;
+  package body axi4_pkg at 208( 6972) + 0 on 17;
+file . "../Sources/axi4_proc_pkg.vhd" "4489ad24329a8c9552cb52cea8c59cc470813eb5" "20190614141238.077":
+  package axi4_proc_pkg at 11( 283) + 0 on 4;
+  package body axi4_proc_pkg at 34( 997) + 0 on 4;
+file . "../Sources/genram_pkg.vhd" "cf90c411d06605bd005d9b134c997296ff97911e" "20190614145330.809":
+  package genram_pkg at 39( 1665) + 0 on 12 body;
+  package body genram_pkg at 224( 9946) + 0 on 13;
+file . "../Sources/golden_top_pkg.vhd" "b6d971209b43479d591c973e0b9605fbaf60c022" "20190614145330.721":
+  package golden_top_pkg at 7( 242) + 0 on 11;
+file . "../Sources/golden_top.vhd" "73521f04b1abf34300e73d22d99566f277f3d524" "20190614145331.247":
+  entity golden_top at 12( 480) + 0 on 18;
+  architecture rtl of golden_top at 148( 5547) + 0 on 19;
+file . "../Sources/wishbone_pkg.vhd" "2c1f9fc7422372f4e8e89703b21ddcd1146cd4cd" "20190614145330.898":
+  package wishbone_pkg at 29( 1230) + 0 on 14 body;
+  package body wishbone_pkg at 1188( 49852) + 0 on 15;
+file . "../MemMaps/map.vhd" "914846af6cb030f8c1a3838a89a7bb4751d07678" "20190614145435.157":
+  entity mainmap at 1( 0) + 0 on 22;
+  architecture syn of mainmap at 34( 1401) + 0 on 23;
