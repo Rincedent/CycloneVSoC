@@ -1,0 +1,33 @@
+memory-map:
+  bus: axi4-lite-32
+  name: mainmap
+  x-cern-info:
+    map-version: 20190603
+    ident-code: 0x1
+    semantic-mem-map-version: 0.0.1
+  children:
+    - reg:
+        name: fpgaOutputs
+        address: next
+        width: 32
+        access: rw
+        x-fesa:
+          persistence: Fesa
+        children:
+          - field:
+              name: leds
+              range: 3-0
+    - reg:
+        name: fpgaInputs
+        address: next
+        width: 32
+        access: ro
+        x-fesa:
+          persistence: Fesa
+        children:
+          - field:
+              name: DIPSW
+              range: 5-2
+          - field:
+              name: Buttons
+              range: 1-0
