@@ -12,6 +12,7 @@ standalone_hps.qsys describing the Platform Designer HPS system.
 ## Folders architecture
 * `GoldenTop` : Contains the Quartus project and the VHDL sources
 * `Outputs` : various binary files necessary to flash the design
+* `linux-socfpga` : linux kernel sources
 
 
 ## Build process
@@ -28,6 +29,25 @@ standalone_hps.qsys describing the Platform Designer HPS system.
    to be altered.**
 6. Follow the "Prepare SD card" paragraph using the files that just got
    generated in the outputs/ folder
+
+## Linux kernel
+The Sources for the linux kernel are in the linux-socfpga submodule. To
+recompile the kernel :
+
+```bash
+git submodule update --init
+cd linux-socfpga
+# Set up the cross-compiler options 
+export CROSS_COMPILE=arm-linux-gnueabihf-
+export ARCH=arm
+# Edit configs/modules needed
+make menuconfig 
+# Build the zImage
+make zImage -j8
+# Export the zImage
+cp arch/arm/boot/zImage ../Outputs
+```
+
 
 ## Useful links
 The HPS system boots first using uBoot, then a linux. The sources of the
