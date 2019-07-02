@@ -11,9 +11,8 @@ standalone_hps.qsys describing the Platform Designer HPS system.
 
 ## Folders architecture
 * `GoldenTop` : Contains the Quartus project and the VHDL sources
-* `cv_soc_devkit_ghrd` : xml files describing the HPS defaults settings
-  for Quartus Platform Designer
 * `Outputs` : various binary files necessary to flash the design
+
 
 ## Build process
 1. Open the quartus project in GoldenTop/Work/soc_system.qsf
