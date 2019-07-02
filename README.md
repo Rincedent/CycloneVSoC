@@ -23,6 +23,9 @@ standalone_hps.qsys describing the Platform Designer HPS system.
 5. Once everything is synthesized, run the ./make.sh script at the root
    of the project from an embedded command shell (you need the soc-eds
    software from altera :  http://fpgasoftware.intel.com/soceds/)
+   * **`NOTE` : You should run the script twice the first time, then
+   only once per synthesis because the auto-generated toolchain needs
+   to be altered.**
 6. Follow the "Prepare SD card" paragraph using the files that just got
    generated in the outputs/ folder
 
