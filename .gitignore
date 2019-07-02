@@ -2,8 +2,6 @@ BuildUboot/
 tags
 *tags
 *.o
-GoldenTop/Sources/.qsys*
-GoldenTop/Sources/standalone_hps/
 
 GoldenTop/Work
 

@@ -12,10 +12,10 @@ bsp-create-settings --type spl --bsp-dir BuildUboot \
 make -C BuildUboot -j8
 make -C BuildUboot uboot -j8
 
-cat BuildUboot/preloader-mkpimage.bin BuildUboot/uboot-socfpga/u-boot.img > outputs/boot-partition.img
+cat BuildUboot/preloader-mkpimage.bin BuildUboot/uboot-socfpga/u-boot.img > Outputs/boot-partition.img
 
-quartus_cpf -c GoldenTop/Work/output_files/soc_system.sof outputs/soc_system.rbf
+quartus_cpf -c GoldenTop/Work/output_files/soc_system.sof Outputs/soc_system.rbf
 
-sopc2dts --input GoldenTop/Work/standalone_hps.sopcinfo --output outputs/socfpga.dts --type dts --board ./cv_soc_devkit_ghrd/soc_system_board_info.xml --board ./cv_soc_devkit_ghrd/hps_common_board_info.xml --bridge-removal all --clocks
+sopc2dts --input GoldenTop/Work/standalone_hps.sopcinfo --output Outputs/socfpga.dts --type dts --board GoldenTop/HPS/cv_soc_devkit_ghrd/soc_system_board_info.xml --board GoldenTop/HPS/cv_soc_devkit_ghrd/hps_common_board_info.xml --bridge-removal all --clocks
 
-dtc -f -I dts -O dtb -o outputs/socfpga.dtb outputs/socfpga.dts
+dtc -f -I dts -O dtb -o Outputs/socfpga.dtb Outputs/socfpga.dts
