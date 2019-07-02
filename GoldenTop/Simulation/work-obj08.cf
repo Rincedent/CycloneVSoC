@@ -1,5 +1,5 @@
 v 4
-file . "../Sources/standalone_hps/synthesis/standalone_hps.vhd" "7f09aee4bc652198b4e4dbb81b2ce484c5372766" "20190614145331.359":
+file . "../HPS/standalone_hps/synthesis/standalone_hps.vhd" "7f09aee4bc652198b4e4dbb81b2ce484c5372766" "20190614145331.359":
   entity standalone_hps at 5( 65) + 0 on 20;
   architecture rtl of standalone_hps at 130( 14029) + 0 on 21;
 file . "../Sources/axi4_pkg.vhd" "2cff6fa2ae7b741f657b9455d48affbc6acea270" "20190614145331.191":
