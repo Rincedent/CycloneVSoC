@@ -863,13 +863,13 @@ set_global_assignment -name NUM_PARALLEL_PROCESSORS ALL
 set_global_assignment -name OPTIMIZATION_MODE "HIGH PERFORMANCE EFFORT"
 set_global_assignment -name VHDL_INPUT_VERSION VHDL_2008
 set_global_assignment -name VHDL_SHOW_LMF_MAPPING_MESSAGES OFF
+set_global_assignment -name VHDL_FILE ../HPS/standalone_hps/synthesis/standalone_hps.vhd
+set_global_assignment -name QSYS_FILE ../HPS/standalone_hps.qsys
 set_global_assignment -name VHDL_FILE ../MemMaps/map.vhd -hdl_version VHDL_2008
 set_global_assignment -name VHDL_FILE ../Sources/golden_top_pkg.vhd -hdl_version VHDL_2008
 set_global_assignment -name VHDL_FILE ../Sources/wishbone_pkg.vhd
 set_global_assignment -name VHDL_FILE ../Sources/genram_pkg.vhd
 set_global_assignment -name VHDL_FILE ../Sources/axi4_pkg.vhd
-set_global_assignment -name QSYS_FILE ../Sources/standalone_hps.qsys
-set_global_assignment -name VHDL_FILE ../Sources/standalone_hps/synthesis/standalone_hps.vhd
 set_global_assignment -name SOURCE_FILE ../Options/soc_system_assignment_defaults.qdf
 set_global_assignment -name SDC_FILE ../Options/soc_system_timing.sdc
 set_global_assignment -name VHDL_FILE ../Sources/golden_top.vhd
