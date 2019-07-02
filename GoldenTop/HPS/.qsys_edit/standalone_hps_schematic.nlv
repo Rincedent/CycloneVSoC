@@ -1,0 +1,74 @@
+# # File gsaved with Nlview version 6.3.8  2013-12-19 bk=1.2992 VDI=34 GEI=35
+# 
+preplace inst standalone_hps.hps_0.axi_ocram -pg 1
+preplace inst standalone_hps.hps_0.qspi -pg 1
+preplace inst standalone_hps.hps_0.wd_timer1 -pg 1
+preplace inst standalone_hps.hps_0.clkmgr -pg 1
+preplace inst standalone_hps.hps_0.arm_a9_0 -pg 1
+preplace inst standalone_hps.hps_0.eosc1 -pg 1
+preplace inst standalone_hps.hps_0.gmac0 -pg 1
+preplace inst standalone_hps.hps_0.uart0 -pg 1
+preplace inst standalone_hps.hps_0.arm_a9_1 -pg 1
+preplace inst standalone_hps.hps_0.eosc2 -pg 1
+preplace inst standalone_hps.hps_0.sdrctl -pg 1
+preplace inst standalone_hps.hps_0.gmac1 -pg 1
+preplace inst standalone_hps.hps_0.usb0 -pg 1
+preplace inst standalone_hps.hps_0.uart1 -pg 1
+preplace inst standalone_hps.hps_0.sysmgr -pg 1
+preplace inst standalone_hps.axi_bridge_0 -pg 1 -lvl 3 -y 60
+preplace inst standalone_hps.hps_0.axi_sdram -pg 1
+preplace inst standalone_hps.hps_0.usb1 -pg 1
+preplace inst standalone_hps.dipsw_i -pg 1 -lvl 3 -y 280
+preplace inst standalone_hps.hps_0.timer0 -pg 1
+preplace inst standalone_hps.hps_0.hps_io.border -pg 1
+preplace inst standalone_hps.hps_0.scu -pg 1
+preplace inst standalone_hps.hps_0.nand0 -pg 1
+preplace inst standalone_hps.hps_0.timer1 -pg 1
+preplace inst standalone_hps.hps_0.arm_gic_0 -pg 1
+preplace inst standalone_hps.hps_0.f2s_periph_ref_clk -pg 1
+preplace inst standalone_hps.hps_0.hps_io -pg 1
+preplace inst standalone_hps.leds_o -pg 1 -lvl 3 -y 380
+preplace inst standalone_hps.hps_0.l3regs -pg 1
+preplace inst standalone_hps.hps_0.i2c0 -pg 1
+preplace inst standalone_hps.hps_0.timer2 -pg 1
+preplace inst standalone_hps.hps_0.rstmgr -pg 1
+preplace inst standalone_hps.hps_0.L2 -pg 1
+preplace inst standalone_hps -pg 1 -lvl 1 -y 40 -regy -20
+preplace inst standalone_hps.hps_0.i2c1 -pg 1
+preplace inst standalone_hps.hps_0.timer3 -pg 1
+preplace inst standalone_hps.hps_0.bridges -pg 1
+preplace inst standalone_hps.hps_0.clk_0 -pg 1
+preplace inst standalone_hps.hps_0.dcan0 -pg 1
+preplace inst standalone_hps.hps_0.sdmmc -pg 1
+preplace inst standalone_hps.hps_0.i2c2 -pg 1
+preplace inst standalone_hps.hps_0.fpga_interfaces -pg 1
+preplace inst standalone_hps.hps_0.dcan1 -pg 1
+preplace inst standalone_hps.hps_0.i2c3 -pg 1
+preplace inst standalone_hps.hps_0 -pg 1 -lvl 2 -y 50
+preplace inst standalone_hps.hps_0.spim0 -pg 1
+preplace inst standalone_hps.hps_0.gpio0 -pg 1
+preplace inst standalone_hps.buttons_i -pg 1 -lvl 3 -y 480
+preplace inst standalone_hps.hps_0.timer -pg 1
+preplace inst standalone_hps.hps_0.spim1 -pg 1
+preplace inst standalone_hps.hps_0.gpio1 -pg 1
+preplace inst standalone_hps.hps_0.dma -pg 1
+preplace inst standalone_hps.clk_0 -pg 1 -lvl 1 -y 70
+preplace inst standalone_hps.hps_0.gpio2 -pg 1
+preplace inst standalone_hps.hps_0.wd_timer0 -pg 1
+preplace inst standalone_hps.hps_0.fpgamgr -pg 1
+preplace inst standalone_hps.hps_0.f2s_sdram_ref_clk -pg 1
+preplace netloc EXPORT<net_container>standalone_hps</net_container>(SLAVE)leds_o.external_connection,(SLAVE)standalone_hps.leds_o) 1 0 3 NJ 410 NJ 410 NJ
+preplace netloc EXPORT<net_container>standalone_hps</net_container>(MASTER)standalone_hps.h2f_bus,(MASTER)axi_bridge_0.m0) 1 3 1 NJ
+preplace netloc EXPORT<net_container>standalone_hps</net_container>(MASTER)hps_0.h2f_reset,(MASTER)standalone_hps.h2f_reset) 1 2 2 NJ 180 NJ
+preplace netloc EXPORT<net_container>standalone_hps</net_container>(SLAVE)standalone_hps.dipsw_i,(SLAVE)dipsw_i.external_connection) 1 0 3 NJ 310 NJ 310 NJ
+preplace netloc EXPORT<net_container>standalone_hps</net_container>(SLAVE)standalone_hps.reset,(SLAVE)clk_0.clk_in_reset) 1 0 1 NJ
+preplace netloc EXPORT<net_container>standalone_hps</net_container>(SLAVE)standalone_hps.memory,(SLAVE)hps_0.memory) 1 0 2 NJ 240 NJ
+preplace netloc FAN_OUT<net_container>standalone_hps</net_container>(SLAVE)hps_0.f2h_axi_clock,(SLAVE)dipsw_i.clk,(SLAVE)buttons_i.clk,(SLAVE)axi_bridge_0.clk,(SLAVE)leds_o.clk,(MASTER)clk_0.clk,(SLAVE)hps_0.h2f_axi_clock,(SLAVE)hps_0.h2f_lw_axi_clock) 1 1 2 300 430 650
+preplace netloc POINT_TO_POINT<net_container>standalone_hps</net_container>(SLAVE)axi_bridge_0.s0,(MASTER)hps_0.h2f_axi_master) 1 2 1 690
+preplace netloc EXPORT<net_container>standalone_hps</net_container>(SLAVE)clk_0.clk_in,(SLAVE)standalone_hps.clk) 1 0 1 NJ
+preplace netloc EXPORT<net_container>standalone_hps</net_container>(SLAVE)standalone_hps.buttons_i,(SLAVE)buttons_i.external_connection) 1 0 3 NJ 510 NJ 510 NJ
+preplace netloc FAN_OUT<net_container>standalone_hps</net_container>(SLAVE)buttons_i.s1,(SLAVE)dipsw_i.s1,(MASTER)hps_0.h2f_lw_axi_master,(SLAVE)leds_o.s1) 1 2 1 630
+preplace netloc EXPORT<net_container>standalone_hps</net_container>(SLAVE)standalone_hps.hps_io,(SLAVE)hps_0.hps_io) 1 0 2 NJ 180 NJ
+preplace netloc FAN_OUT<net_container>standalone_hps</net_container>(SLAVE)hps_0.f2h_warm_reset_req,(SLAVE)axi_bridge_0.clk_reset,(MASTER)clk_0.clk_reset,(SLAVE)dipsw_i.reset,(SLAVE)hps_0.f2h_debug_reset_req,(SLAVE)buttons_i.reset,(SLAVE)leds_o.reset,(SLAVE)hps_0.f2h_cold_reset_req) 1 1 2 280 530 670
+levelinfo -pg 1 0 70 960
+levelinfo -hier standalone_hps 80 110 440 720 870

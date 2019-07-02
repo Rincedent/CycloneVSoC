@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<preferences>
+ <debug showDebugMenu="0" />
+ <systemtable filter="standalone_hps.clk" showClockDomains="1" showResetDomains="0">
+  <columns>
+   <connections preferredWidth="159" />
+   <irq preferredWidth="47" />
+   <inputclock preferredWidth="154" />
+  </columns>
+ </systemtable>
+ <library expandedCategories="Library,Project" />
+ <window width="1920" height="1174" x="0" y="26" />
+ <generation synthesis="VHDL" block_symbol_file="0" simulation="VHDL" />
+</preferences>
