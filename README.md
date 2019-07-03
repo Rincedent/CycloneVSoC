@@ -48,6 +48,44 @@ make zImage -j8
 cp arch/arm/boot/zImage ../Outputs
 ```
 
+## SD card
+Inspired from:
+* http://xillybus.com/tutorials/u-boot-image-altera-soc
+* https://rocketboards.org/foswiki/view/Documentation/GSRD131ProgrammingFPGA
+* https://rocketboards.org/foswiki/view/Documentation/GSRD131CompileHardwareDesign#Converting_.sof_to_.rbf
+
+This design relies on flashing everything on the SD card (see the 
+xillybus link) in order to flash the design. The SD card should have
+three different partitions, as shown here :
+
+```bash
+# fdisk -lu /dev/sdX
+
+Disk /dev/sdX: 7948 MB, 7948206080 bytes
+245 heads, 62 sectors/track, 1021 cylinders, total 15523840 sectors
+Units = sectors of 1 * 512 = 512 bytes
+
+   Device Boot      Start         End      Blocks   Id  System
+   /dev/sdX1              62      167089       83514    b  W95 FAT32
+   /dev/sdX2          167090      182279        7595   a2  Unknown
+   /dev/sdX3          182280    15508989     7663355   83  Linux
+```
+
+Setting up the SD card :
+```bash
+# Copy bitstream/kernel/device tree to FAT32
+mkdir /tmp/sdX1
+mount /dev/sdX1 /tmp/sdX1
+cp Outputs/soc_system.rbf /tmp/sdX1
+cp Outputs/zImage /tmp/sdX1
+cp Outputs/socfpga.dtb /tmp/sdX1
+# DD uboot image to the partition with the a2 flag
+dd of=/dev/sdX3 bs=512 if=Outputs/boot-partition.img ; sync
+# The partition with the Linux flag contains the linux filesystem 
+```
+The following link explains the steps needed to flash a prebuilt image 
+on the SD card. I used it to prepare the default linux filesystem
+* https://rocketboards.org/foswiki/Documentation/GSRD131BootLinuxSd
 
 ## Useful links
 The HPS system boots first using uBoot, then a linux. The sources of the
