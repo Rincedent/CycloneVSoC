@@ -17,7 +17,8 @@ standalone_hps.qsys describing the Platform Designer HPS system.
 ## Quick note about uBoot
 The sources used in this demo are the uboot sources provided by Altera. 
 following link by the REDs explains how to get the up to date uBoot 
-sources.
+sources :
+http://blog.reds.ch/?p=675
 
 ## Build process
 1. Open the quartus project in GoldenTop/Work/soc_system.qsf
